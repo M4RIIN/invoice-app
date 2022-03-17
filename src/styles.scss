@@ -5,13 +5,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap');
+
+// @font-face {
+//   font-family: "Spartan";
+//   src: local("Spartan"), url(./assets/Spartan/Spartan-VariableFont_wght.ttf);
+// }
+
 
 body:not(.dark-mode-preloading) {
   transition: all 0.3s linear;
 }
 
 body.dark-mode {
-  background-color: #2f3542;
+  background-color: #141625;
   color: #f1f2f6;
 }
 

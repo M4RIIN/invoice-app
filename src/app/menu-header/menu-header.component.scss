@@ -1,0 +1,35 @@
+#title:not(.dark-mode-preloading) {
+  transition: background-color 0.3s linear;
+}
+
+#title.dark-mode{
+  color: white;
+}
+
+#title.light-mode{
+  color: black;
+}
+
+#subtitle:not(.dark-mode-preloading) {
+  transition: background-color 0.3s linear;
+}
+
+#subtitle.dark-mode{
+  color: whitesmoke;
+}
+
+#subtitle.light-mode{
+  color: #888EB0;
+}
+
+#filter:not(.dark-mode-preloading) {
+  transition: background-color 0.3s linear;
+}
+
+#filter.dark-mode{
+  color: white;
+}
+
+#filter.light-mode{
+  color: black;
+}

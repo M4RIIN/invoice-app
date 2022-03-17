@@ -5,15 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DARK_MODE_OPTIONS } from 'angular-dark-mode';
+import { MenuHeaderComponent } from './menu-header/menu-header.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuHeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatMenuModule
   ],
   providers: [
     {

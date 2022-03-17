@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MenuHeaderComponent } from './menu-header/menu-header.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:"**",component:MenuHeaderComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

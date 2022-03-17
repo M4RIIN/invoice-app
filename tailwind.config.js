@@ -43,7 +43,8 @@ module.exports = {
       'primary-purple' : '#7C5DFA',
       'pr-purple-light' : '#9277FF',
       'background' : '#F2F2F2',
-      'purple-grey' : '#494E6E'
+      'purple-grey' : '#494E6E',
+      'classic-grey' : '#888EB0'
     }),
     columns: {
       auto: 'auto',
@@ -349,6 +350,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      'spartan':'Spartan',
       sans: [
         'ui-sans-serif',
         'system-ui',
