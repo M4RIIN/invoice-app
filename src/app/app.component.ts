@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     })
   }
 
-  onToggle(): void {
+    onToggle(): void {
     this.darkModeService.toggle();
   }
 }

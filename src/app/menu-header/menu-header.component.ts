@@ -1,5 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { DarkModeService } from 'angular-dark-mode';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-menu-header',
@@ -17,13 +19,21 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class MenuHeaderComponent implements OnInit {
 
-  constructor() { }
+  darkMode$: Observable<boolean> | undefined ;
+  constructor(private darkModeService: DarkModeService){}
   state: string = 'default';
+  filter:string = "";
+
   ngOnInit(): void {
+    this.darkMode$ = this.darkModeService.darkMode$;
   }
 
   rotate() {
     this.state = this.state === 'default' ? 'rotated' : 'default';
+  }
+
+  isChecked(value:string):boolean{
+    return value === this.filter;
   }
 
 }

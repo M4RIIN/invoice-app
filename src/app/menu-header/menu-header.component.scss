@@ -1,5 +1,5 @@
 #title:not(.dark-mode-preloading) {
-  transition: background-color 0.3s linear;
+  transition: color 0.3s linear;
 }
 
 #title.dark-mode{
@@ -11,7 +11,7 @@
 }
 
 #subtitle:not(.dark-mode-preloading) {
-  transition: background-color 0.3s linear;
+  transition: color 0.3s linear;
 }
 
 #subtitle.dark-mode{
@@ -23,7 +23,7 @@
 }
 
 #filter:not(.dark-mode-preloading) {
-  transition: background-color 0.3s linear;
+  transition: color 0.3s linear;
 }
 
 #filter.dark-mode{
@@ -32,4 +32,22 @@
 
 #filter.light-mode{
   color: black;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #7C5DFA !important;
+}
+
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #7C5DFA !important;
+}
+
+::ng-deep .light-mode-menu {
+
+  background-color: white!important;
+}
+
+::ng-deep .dark-mode-menu {
+
+  background-color: #252945!important;
 }
