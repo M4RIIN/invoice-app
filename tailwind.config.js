@@ -38,7 +38,7 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
-      'black-purple' : '#373B53',
+      'black-purple' : '#1E2139',
       'very-dark-purple' : '#373B53',
       'primary-purple' : '#7C5DFA',
       'pr-purple-light' : '#9277FF',

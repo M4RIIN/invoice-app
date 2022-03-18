@@ -8,11 +8,15 @@ import { DARK_MODE_OPTIONS } from 'angular-dark-mode';
 import { MenuHeaderComponent } from './menu-header/menu-header.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { InvoiceCardComponent } from './invoice-card/invoice-card.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuHeaderComponent
+    MenuHeaderComponent,
+    InvoiceCardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
