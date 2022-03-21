@@ -13,7 +13,7 @@ export class InvoiceServiceFake {
         'due': '19 Aug 2021',
         'who' : 'Jensen Huang',
         'price' : 1800.90,
-        'status' : 'Paid'
+        'status' : 'Pending'
       },
       {
         'code':"RT3080",
