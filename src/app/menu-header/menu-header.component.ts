@@ -2,6 +2,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DarkModeService } from 'angular-dark-mode';
 import { Observable } from 'rxjs';
+import { Invoice } from 'src/assets/model';
+import { InvoiceServiceFake } from '../services/invoice.service';
 
 @Component({
   selector: 'app-menu-header',
@@ -20,20 +22,32 @@ import { Observable } from 'rxjs';
 export class MenuHeaderComponent implements OnInit {
 
   darkMode$: Observable<boolean> | undefined ;
-  constructor(private darkModeService: DarkModeService){}
+  invoices$ :Observable<Invoice[]> | undefined;
+  constructor(private darkModeService: DarkModeService,private invoiceService:InvoiceServiceFake){}
   state: string = 'default';
   filter:string = "";
 
   ngOnInit(): void {
     this.darkMode$ = this.darkModeService.darkMode$;
+    this.invoices$ = this.invoiceService.getAllInvoices();
   }
 
   rotate() {
     this.state = this.state === 'default' ? 'rotated' : 'default';
   }
+  setFilter(filter:string){
+    if(this.filter === filter){
+      this.filter = ""
+    }else this.filter = filter;
+    this.invoiceService.setUpFilter(this.filter);
+    this.invoices$ = this.invoiceService.getAllInvoices();
+  }
 
   isChecked(value:string):boolean{
     return value === this.filter;
+  }
+  add(){
+    this.invoiceService.addInvoice();
   }
 
 }

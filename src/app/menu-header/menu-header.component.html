@@ -7,8 +7,8 @@
       }" class="font-spartan font-bold text-lg lg:text-3xl ">Invoices</h2>
     </div>
     <div>
-      <p id="subtitle" class="font-spartan text-classic-grey font-normal text-sm lg:text-lg md:hidden lg:hidden">7 invoices</p>
-      <p id="subtitle" class="font-spartan text-classic-grey font-normal text-sm lg:text-lg hidden md:inline-block lg:inline-block">There are 7 total invoices</p>
+      <p id="subtitle" class="font-spartan text-classic-grey font-normal text-sm lg:text-lg md:hidden lg:hidden">{{(invoices$ | async)?.length}} invoices</p>
+      <p id="subtitle" class="font-spartan text-classic-grey font-normal text-sm lg:text-lg hidden md:inline-block lg:inline-block">There are {{(invoices$ | async)?.length}} total invoices</p>
     </div>
   </div>
   <div (click)="rotate()" #dropDownButton [matMenuTriggerFor]="menu"  class="flex-initial w-20 md:w-52 lg:w-48 flex flex-row">
@@ -24,16 +24,16 @@
   </div>
   <mat-menu  (close)="rotate()" #menu="matMenu" [class]="'lg:w-48 h-32 w-32 ' + ((darkMode$ | async)?'dark-mode-menu':'light-mode-menu')">
     <section class="m-4 flex flex-col">
-      <mat-checkbox (change)="filter = 'draft'" [checked]="isChecked('draft')"  class="flex-1 text-spartan text-bold" formControlName="draft">Draft</mat-checkbox>
-      <mat-checkbox (change)="filter = 'pending'" [checked]="isChecked('pending')" class="flex-1" formControlName="pending">Pending</mat-checkbox>
-      <mat-checkbox (change)="filter = 'paid'" [checked]="isChecked('paid')"  class="flex-1" formControlName="paid">Paid</mat-checkbox>
+      <mat-checkbox (change)="setFilter('Draft')" [checked]="isChecked('Draft')"  class="flex-1 text-spartan text-bold" formControlName="draft">Draft</mat-checkbox>
+      <mat-checkbox (change)="setFilter('Pending')" [checked]="isChecked('Pending')" class="flex-1" formControlName="pending">Pending</mat-checkbox>
+      <mat-checkbox (change)="setFilter('Paid')" [checked]="isChecked('Paid')"  class="flex-1" formControlName="paid">Paid</mat-checkbox>
     </section>
   </mat-menu>
   <div class="flex-initial flex-row flex w-24 bg-primary-purple md:w-40 lg:w-40 rounded-full">
     <div class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-white ml-2 mt-auto mb-auto flex">
       <img src="assets/icon-plus.svg" class="m-auto"/>
     </div>
-    <div class="flex-1 flex ">
+    <div (click)="add()" class="flex-1 flex ">
       <p class="text-spartan text-white ml-2 mt-auto mb-auto font-bold md:hidden">New</p>
       <p class="text-spartan text-white ml-2 mt-auto mb-auto font-bold hidden  md:inline-block ">New Invoice</p>
     </div>

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DarkModeService } from 'angular-dark-mode';
 import { Observable } from 'rxjs';
+import { Invoice } from 'src/assets/model';
 
 @Component({
   selector: 'app-invoice-card',
@@ -8,6 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./invoice-card.component.scss']
 })
 export class InvoiceCardComponent implements OnInit {
+  @Input() invoice:Invoice | undefined;
   darkMode$: Observable<boolean> | undefined ;
   constructor(private darkModeService: DarkModeService){}
 
