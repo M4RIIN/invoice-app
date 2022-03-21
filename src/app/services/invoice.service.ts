@@ -33,6 +33,8 @@ export class InvoiceServiceFake {
   private _invoices: BehaviorSubject<Invoice[]> = new BehaviorSubject(this.data);
   public invoices$ : Observable<Invoice[]> = this._invoices.asObservable();
   filter:string = "";
+  private _openNewView : BehaviorSubject<any> = new BehaviorSubject(null);
+  public openNewView$ : Observable<Boolean> = this._openNewView.asObservable();
   constructor() { }
 
   getAllInvoices():Observable<Invoice[]>{
@@ -59,6 +61,10 @@ export class InvoiceServiceFake {
       }
     );
     this._invoices.next(this.data);
+  }
+
+  handleNewView(){
+    this._openNewView.next(true);
   }
 }
 

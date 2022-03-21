@@ -1,9 +1,8 @@
 
-<div *ngIf="message != 'not loaded'">
   <div id="sidenav"  [ngClass]="{
     'dark-mode': (darkMode$ | async),
     'light-mode': !(darkMode$ | async)
-  }" class="w-full z-20 fixed h-16 md:h-20 lg:h-full lg:w-28 lg:rounded-tr-2xl lg:rounded-br-2xl top-0 left-0 drop-shadow-md ">
+  }" class="w-full z-20 fixed h-16 md:h-20 lg:h-full lg:w-28 lg:rounded-tr-2xl lg:rounded-br-2xl top-0 left-0 drop-shadow-md z-50">
     <div class="w-16 md:w-20 md:h-full lg:w-full lg:h-28 h-full rounded-r-2xl bg-primary-purple relative">
       <div class=" w-full h-1/2 rounded-tl-2xl bg-pr-purple-light rounded-br-2xl bottom-0 absolute">
 
@@ -18,5 +17,56 @@
       <img src="assets/image-avatar.jpg" class="rounded-full max-h-10 w-10 m-auto lg:max-h-14 lg:w-14"/>
     </div>
   </div>
+
+  <mat-drawer-container *ngIf="message != 'not loaded'" class="bg-transparent h-screen" [ngClass]="{
+    'dark-mode': (darkMode$ | async),
+    'light-mode': !(darkMode$ | async)
+  }">
+  <mat-drawer #drawer class="h-screen z-30 w-1/2 pl-28 rounded-lg" mode="over">
+    <form class="p-4">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Company (disabled)</mat-label>
+        <input matInput disabled value="Google">
+      </mat-form-field>
+
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td><mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>First name</mat-label>
+          <input matInput>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Long Last Name That Will Be Truncated</mat-label>
+          <input matInput>
+        </mat-form-field></td>
+      </tr></table>
+
+      <p>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Address</mat-label>
+          <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Address 2</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </p>
+
+      <table class="w-full flex" cellspacing="0"><tr>
+        <td><mat-form-field class="flex-1" appearance="fill">
+          <mat-label>City</mat-label>
+          <input matInput placeholder="Ex. San Francisco">
+        </mat-form-field></td>
+        <td><mat-form-field class="flex-1" appearance="fill">
+          <mat-label>State</mat-label>
+          <input matInput placeholder="Ex. California">
+        </mat-form-field></td>
+        <td><mat-form-field class="flex-1" appearance="fill">
+          <mat-label>Postal Code</mat-label>
+          <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
+          <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+        </mat-form-field></td>
+      </tr></table>
+    </form>
+  </mat-drawer>
   <router-outlet></router-outlet>
-</div>
+</mat-drawer-container>

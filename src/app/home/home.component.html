@@ -1,5 +1,6 @@
+
 <div class="ml-6 mr-6 pt-28 pb-2 lg:ml-96 lg:mr-96 md:ml-12 md:mr-12">
-  <app-menu-header></app-menu-header >
+  <app-menu-header ></app-menu-header >
 
     <div>
       <app-invoice-card [invoice]="a" *ngFor="let a of invoices$ | async"></app-invoice-card>

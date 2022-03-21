@@ -27,8 +27,22 @@ body.light-mode {
   color: #2f3542;
 }
 
-body.dark-mode >{
-  background-color: chocolate;
+
+mat-drawer-container:not(.dark-mode-preloading) {
+  transition: all 0.3s linear;
 }
+
+mat-drawer-container.dark-mode {
+  background-color: #141625;
+  color: #f1f2f6;
+}
+
+mat-drawer-container.light-mode {
+  background-color: #f1f2f6;
+  color: #2f3542;
+}
+
+
+
 
 

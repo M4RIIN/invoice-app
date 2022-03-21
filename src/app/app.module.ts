@@ -10,6 +10,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { InvoiceCardComponent } from './invoice-card/invoice-card.component';
 import { HomeComponent } from './home/home.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatFormFieldControl} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSidenavModule,
+    MatInputModule
   ],
   providers: [
     {

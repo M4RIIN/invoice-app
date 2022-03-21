@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DarkModeService } from 'angular-dark-mode';
 import { Observable } from 'rxjs';
 import { Invoice } from 'src/assets/model';
@@ -21,6 +21,7 @@ import { InvoiceServiceFake } from '../services/invoice.service';
 })
 export class MenuHeaderComponent implements OnInit {
 
+  @Output() onClickOpenNew = new EventEmitter<boolean>();
   darkMode$: Observable<boolean> | undefined ;
   invoices$ :Observable<Invoice[]> | undefined;
   constructor(private darkModeService: DarkModeService,private invoiceService:InvoiceServiceFake){}
@@ -46,8 +47,9 @@ export class MenuHeaderComponent implements OnInit {
   isChecked(value:string):boolean{
     return value === this.filter;
   }
-  add(){
-    this.invoiceService.addInvoice();
+  openMenuAdd(){
+    //this.invoiceService.addInvoice();
+    this.invoiceService.handleNewView();
   }
 
 }

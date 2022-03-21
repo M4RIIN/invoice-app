@@ -16,5 +16,7 @@ export class HomeComponent implements OnInit {
 
   this.invoices$ = this.invoiceService.getAllInvoices();
   }
+  handleOpenMenuAdd(event:boolean){
 
+  }
 }
