@@ -3,6 +3,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 import { DarkModeService } from 'angular-dark-mode';
 import { Observable } from 'rxjs';
 import { Invoice } from 'src/assets/model';
+import { AuthService } from './services/auth.service';
 import { InvoiceServiceFake } from './services/invoice.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   title = 'invoiceApplication';
   @ViewChild("drawer") drawer : MatDrawer | undefined;
   darkMode$: Observable<boolean> = this.darkModeService.darkMode$;
-  constructor(private darkModeService: DarkModeService,private invoiceService:InvoiceServiceFake
+  constructor(private darkModeService: DarkModeService,private invoiceService:InvoiceServiceFake,public authService:AuthService
    ){}
   message = "not loaded"
   ngOnInit(): void {

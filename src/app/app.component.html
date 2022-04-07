@@ -1,7 +1,7 @@
-<!--
 
 
-  <div id="sidenav"  [ngClass]="{
+
+  <div id="sidenav" *ngIf="authService.isLoggedIn"  [ngClass]="{
     'dark-mode': (darkMode$ | async),
     'light-mode': !(darkMode$ | async)
   }" class="w-full z-20 fixed h-16 md:h-20 lg:h-full lg:w-28 lg:rounded-tr-2xl lg:rounded-br-2xl top-0 left-0 drop-shadow-md z-50">
@@ -18,7 +18,7 @@
     <div class="h-full w-20  right-0 absolute top-0 flex lg:h-20 lg:w-full lg:top-auto lg:bottom-0">
       <img src="assets/image-avatar.jpg" class="rounded-full max-h-10 w-10 m-auto lg:max-h-14 lg:w-14"/>
     </div>
-  </div> -->
+  </div>
 
   <mat-drawer-container *ngIf="message != 'not loaded'" class="bg-transparent h-screen" [ngClass]="{
     'dark-mode': (darkMode$ | async),
