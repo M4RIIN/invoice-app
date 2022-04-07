@@ -1,0 +1,26 @@
+<!-- <button (click)="signin()">se connecter</button>
+<button (click)="logout()">se deconnecter</button> -->
+
+<div class="h-full w-full flex flex-col">
+  <div class="flex-1">
+
+  </div>
+  <div class="flex-1 w-full p-7">
+    <form class="w-full" >
+      <mat-form-field class="w-full" appearance="fill">
+        <mat-label>Pseudo</mat-label>
+        <input matInput placeholder="Ex. Pizza" value="Sushi">
+        <mat-icon matSuffix>account_circle</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="w-full" appearance="fill">
+        <mat-label>Mot de passe</mat-label>
+        <input matInput placeholder="Ex. Pizza" value="Sushi">
+        <mat-icon matSuffix>lock_open</mat-icon>
+      </mat-form-field>
+
+      <button (click)="signin()" >Se connecter</button>
+    </form>
+  </div>
+
+</div>

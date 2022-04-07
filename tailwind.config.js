@@ -625,6 +625,7 @@ module.exports = {
       min: 'min-content',
       max: 'max-content',
       fit: 'fit-content',
+      "1/2" : '50%'
     }),
     maxWidth: ({ theme, breakpoints }) => ({
       none: 'none',
@@ -646,6 +647,7 @@ module.exports = {
       fit: 'fit-content',
       prose: '65ch',
       ...breakpoints(theme('screens')),
+      "1/2" : '50%'
     }),
     minHeight: {
       0: '0px',

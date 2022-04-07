@@ -13,13 +13,18 @@ import { HomeComponent } from './home/home.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatFormFieldControl} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { SigninComponent } from './signin/signin.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuHeaderComponent,
     InvoiceCardComponent,
-    HomeComponent
+    HomeComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -28,14 +33,21 @@ import {MatInputModule} from '@angular/material/input';
     MatMenuModule,
     MatCheckboxModule,
     MatSidenavModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [
     {
       provide: DARK_MODE_OPTIONS,
       useValue: {
           element: document.body,
-      }
+      },
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
   }
   ],
   bootstrap: [AppComponent]

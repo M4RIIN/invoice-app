@@ -1,4 +1,6 @@
 
+
+
   <div id="sidenav"  [ngClass]="{
     'dark-mode': (darkMode$ | async),
     'light-mode': !(darkMode$ | async)
@@ -22,51 +24,80 @@
     'dark-mode': (darkMode$ | async),
     'light-mode': !(darkMode$ | async)
   }">
-  <mat-drawer #drawer class="h-screen z-30 w-1/2 pl-28 rounded-lg" mode="over">
-    <form class="p-4">
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Company (disabled)</mat-label>
-        <input matInput disabled value="Google">
-      </mat-form-field>
+  <mat-drawer #drawer class="h-screen z-30 w-full md:pl-32 rounded-lg md:pt-2  p-6 pt-20 " mode="over">
+    <div class="overflow-x-hidden pr-2">
 
-      <table class="example-full-width" cellspacing="0"><tr>
-        <td><mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>First name</mat-label>
-          <input matInput>
-        </mat-form-field></td>
-        <td><mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Long Last Name That Will Be Truncated</mat-label>
-          <input matInput>
-        </mat-form-field></td>
-      </tr></table>
+      <div class="flex w-full" (click)="closeDrawer()">
+        <img src="assets/icon-arrow-left.svg" class="w-4 m-auto flex-initial" />
+        <p class="flex-1 text-left font-spartan font-bold pl-6">Go back</p>
+      </div>
+      <div>
+        <p class="font-spartan font-bold text-3xl mt-5">New Invoice</p>
+      </div>
 
-      <p>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Address</mat-label>
-          <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+      <div>
+        <p class="font-spartan font-bold mt-5 text-primary-purple">Bill from</p>
+      </div>
+
+      <div class="mt-5 w-full ">
+        <mat-form-field class="w-full"  appearance="fill">
+          <mat-label>Street address</mat-label>
+          <textarea class="h-4 " matInput ></textarea>
         </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Address 2</mat-label>
-          <textarea matInput></textarea>
-        </mat-form-field>
-      </p>
+      </div>
 
-      <table class="w-full flex" cellspacing="0"><tr>
-        <td><mat-form-field class="flex-1" appearance="fill">
+      <div class="w-full flex flex-row ">
+        <mat-form-field class="max-w-1/2 m-1"  appearance="fill">
           <mat-label>City</mat-label>
-          <input matInput placeholder="Ex. San Francisco">
-        </mat-form-field></td>
-        <td><mat-form-field class="flex-1" appearance="fill">
-          <mat-label>State</mat-label>
-          <input matInput placeholder="Ex. California">
-        </mat-form-field></td>
-        <td><mat-form-field class="flex-1" appearance="fill">
-          <mat-label>Postal Code</mat-label>
-          <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-          <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-        </mat-form-field></td>
-      </tr></table>
-    </form>
-  </mat-drawer>
-  <router-outlet></router-outlet>
+          <textarea class="h-4" matInput ></textarea>
+        </mat-form-field>
+        <mat-form-field class="max-w-1/2 m-1"  appearance="fill">
+          <mat-label>Code postal</mat-label>
+          <textarea class="h-4" matInput ></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="w-full ">
+        <mat-form-field class="w-full"  appearance="fill">
+          <mat-label>Country</mat-label>
+          <textarea class="h-4 " matInput ></textarea>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <p class="font-spartan font-bold mt-5 text-primary-purple">Bill to</p>
+      </div>
+      <div class="w-full mt-5">
+        <mat-form-field class="w-full"  appearance="fill">
+          <mat-label>Client's Name</mat-label>
+          <textarea class="h-4 " matInput ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="w-full ">
+        <mat-form-field class="w-full"  appearance="fill">
+          <mat-label>Client's Email</mat-label>
+          <textarea class="h-4 " matInput ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="w-full ">
+        <mat-form-field class="w-full"  appearance="fill">
+          <mat-label>Street Address</mat-label>
+          <textarea class="h-4 " matInput ></textarea>
+        </mat-form-field>
+      </div>
+
+
+      <div class="w-full flex flex-row ">
+        <mat-form-field class="max-w-1/2 m-1"  appearance="fill">
+          <mat-label>City</mat-label>
+          <textarea class="h-4" matInput ></textarea>
+        </mat-form-field>
+        <mat-form-field class="max-w-1/2 m-1"  appearance="fill">
+          <mat-label>Code postal</mat-label>
+          <textarea class="h-4" matInput ></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    </mat-drawer>
+    <router-outlet></router-outlet>
 </mat-drawer-container>

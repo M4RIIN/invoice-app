@@ -30,6 +30,10 @@ export class AppComponent implements OnInit {
     })
   }
 
+  closeDrawer(){
+    this.drawer?.toggle();
+  }
+
     onToggle(): void {
     this.darkModeService.toggle();
   }

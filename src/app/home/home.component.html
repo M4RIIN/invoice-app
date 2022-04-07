@@ -1,3 +1,22 @@
+<!--
+  <div id="sidenav"  [ngClass]="{
+    'dark-mode': (darkMode$ | async),
+    'light-mode': !(darkMode$ | async)
+  }" class="w-full z-20 fixed h-16 md:h-20 lg:h-full lg:w-28 lg:rounded-tr-2xl lg:rounded-br-2xl top-0 left-0 drop-shadow-md z-50">
+    <div class="w-16 md:w-20 md:h-full lg:w-full lg:h-28 h-full rounded-r-2xl bg-primary-purple relative">
+      <div class=" w-full h-1/2 rounded-tl-2xl bg-pr-purple-light rounded-br-2xl bottom-0 absolute">
+
+      </div>
+      <img src="assets/logo.svg"  class="h-full w-full absolute z-10 p-4" />
+    </div>
+    <div class="h-full w-0.1 bg-purple-grey right-20 absolute top-0 lg:w-full lg:h-0.1 lg:bottom-20 lg:top-auto lg:left-0"></div>
+    <div class="w-14 h-full absolute top-0 right-20 flex lg:w-full lg:h-14 lg:bottom-24 lg:left-0 lg:top-auto">
+      <img (click)="onToggle()" [src]="(darkMode$ | async)?'assets/icon-sun.svg':'assets/icon-moon.svg'" class="cursor-pointer w-7 h-7 m-auto" />
+    </div>
+    <div class="h-full w-20  right-0 absolute top-0 flex lg:h-20 lg:w-full lg:top-auto lg:bottom-0">
+      <img src="assets/image-avatar.jpg" class="rounded-full max-h-10 w-10 m-auto lg:max-h-14 lg:w-14"/>
+    </div>
+  </div> -->
 
 <div class="ml-6 mr-6 pt-28 pb-2 lg:ml-96 lg:mr-96 md:ml-12 md:mr-12">
   <app-menu-header ></app-menu-header >
