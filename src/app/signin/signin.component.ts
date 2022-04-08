@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DarkModeService } from 'angular-dark-mode';
+import { Observable } from 'rxjs';
 import { User } from 'src/assets/model';
 import { AuthService } from '../services/auth.service';
 
@@ -8,8 +10,8 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
-
-  constructor(private authService:AuthService) { }
+  darkMode$: Observable<boolean> = this.darkModeService.darkMode$;
+  constructor(private authService:AuthService,private darkModeService: DarkModeService) { }
 
   ngOnInit(): void {
   }

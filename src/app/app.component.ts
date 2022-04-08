@@ -31,6 +31,10 @@ export class AppComponent implements OnInit {
     })
   }
 
+  logOut(){
+    this.authService.doLogout();
+  }
+
   closeDrawer(){
     this.drawer?.toggle();
   }

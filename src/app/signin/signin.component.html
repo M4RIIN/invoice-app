@@ -5,17 +5,20 @@
   <div class="flex-1">
 
   </div>
-  <div class="flex-1 w-full p-7">
-    <form class="w-full" >
+  <div class="flex-1 w-full p-7 ">
+    <form class="w-full bg-purple-grey rounded-lg p-3 drop-shadow-md " [ngClass]="{
+    'dark-mode': (darkMode$ | async),
+    'light-mode': !(darkMode$ | async)
+  }">
       <mat-form-field class="w-full" appearance="fill">
         <mat-label>Pseudo</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi">
+        <input matInput placeholder="Ex. FrontEnd Mentor" value="username">
         <mat-icon matSuffix>account_circle</mat-icon>
       </mat-form-field>
 
       <mat-form-field class="w-full" appearance="fill">
         <mat-label>Mot de passe</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi">
+        <input matInput type="password" value="password">
         <mat-icon matSuffix>lock_open</mat-icon>
       </mat-form-field>
 

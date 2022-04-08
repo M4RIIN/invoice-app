@@ -1,0 +1,13 @@
+form:not(.dark-mode-preloading) {
+  transition: color 0.3s linear;
+}
+
+form.dark-mode{
+  color: white;
+}
+
+form.light-mode{
+  color: black;
+  background-color: white;
+
+}
