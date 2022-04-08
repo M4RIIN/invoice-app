@@ -28,6 +28,27 @@ export class InvoiceServiceFake {
         'who' : 'Alysa Werner',
         'price' : 102.55,
         'status' : 'Pending'
+      },
+      {
+        'code':"RG0314",
+        'due': '21 OCt 2021',
+        'who' : 'Alysa Werner',
+        'price' : 102.55,
+        'status' : 'Pending'
+      },
+      {
+        'code':"RG0314",
+        'due': '21 OCt 2021',
+        'who' : 'Alysa Werner',
+        'price' : 102.55,
+        'status' : 'Pending'
+      },
+      {
+        'code':"RG0314",
+        'due': '21 OCt 2021',
+        'who' : 'Alysa Werner',
+        'price' : 102.55,
+        'status' : 'Pending'
       }
     ];
   private _invoices: BehaviorSubject<Invoice[]> = new BehaviorSubject(this.data);

@@ -24,7 +24,7 @@
     'dark-mode': (darkMode$ | async),
     'light-mode': !(darkMode$ | async)
   }">
-  <mat-drawer #drawer class="h-screen z-30 w-full md:pl-32 rounded-lg md:pt-2  p-6 pt-20 " mode="over">
+  <mat-drawer #drawer class="h-screen z-30 w-full md:pl-32 rounded-lg md:pt-2 md:w-3/4  p-6 pt-20 " mode="over">
     <div class="overflow-x-hidden pr-2">
 
       <div class="flex w-full" (click)="closeDrawer()">
@@ -95,6 +95,32 @@
         <mat-form-field class="max-w-1/2 m-1"  appearance="fill">
           <mat-label>Code postal</mat-label>
           <textarea class="h-4" matInput ></textarea>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="w-full"  appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="w-full"  appearance="fill">
+          <mat-label>Choose an option</mat-label>
+          <mat-select>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="w-full ">
+        <mat-form-field class="w-full"  appearance="fill">
+          <mat-label>Project Description</mat-label>
+          <textarea class="h-4 " matInput ></textarea>
         </mat-form-field>
       </div>
     </div>
