@@ -43,25 +43,25 @@
       <div class="mt-5 w-full ">
         <mat-form-field class="w-full"  appearance="fill">
           <mat-label>Street address</mat-label>
-          <textarea class="h-4 " matInput ></textarea>
+          <input class="h-4 " matInput />
         </mat-form-field>
       </div>
 
       <div class="w-full flex flex-row ">
         <mat-form-field class="max-w-1/2 m-1"  appearance="fill">
           <mat-label>City</mat-label>
-          <textarea class="h-4" matInput ></textarea>
+          <input class="h-4 " matInput />
         </mat-form-field>
         <mat-form-field class="max-w-1/2 m-1"  appearance="fill">
           <mat-label>Code postal</mat-label>
-          <textarea class="h-4" matInput ></textarea>
+          <input class="h-4 " matInput />
         </mat-form-field>
       </div>
 
       <div class="w-full ">
         <mat-form-field class="w-full"  appearance="fill">
           <mat-label>Country</mat-label>
-          <textarea class="h-4 " matInput ></textarea>
+          <input class="h-4 " matInput />
         </mat-form-field>
       </div>
 
@@ -71,19 +71,19 @@
       <div class="w-full mt-5">
         <mat-form-field class="w-full"  appearance="fill">
           <mat-label>Client's Name</mat-label>
-          <textarea class="h-4 " matInput ></textarea>
+          <input class="h-4 " matInput />
         </mat-form-field>
       </div>
       <div class="w-full ">
         <mat-form-field class="w-full"  appearance="fill">
           <mat-label>Client's Email</mat-label>
-          <textarea class="h-4 " matInput ></textarea>
+          <input class="h-4 " matInput />
         </mat-form-field>
       </div>
       <div class="w-full ">
         <mat-form-field class="w-full"  appearance="fill">
           <mat-label>Street Address</mat-label>
-          <textarea class="h-4 " matInput ></textarea>
+          <input class="h-4 " matInput />
         </mat-form-field>
       </div>
 
@@ -91,11 +91,11 @@
       <div class="w-full flex flex-row ">
         <mat-form-field class="max-w-1/2 m-1"  appearance="fill">
           <mat-label>City</mat-label>
-          <textarea class="h-4" matInput ></textarea>
+          <input class="h-4 " matInput />
         </mat-form-field>
         <mat-form-field class="max-w-1/2 m-1"  appearance="fill">
           <mat-label>Code postal</mat-label>
-          <textarea class="h-4" matInput ></textarea>
+          <input class="h-4 " matInput />
         </mat-form-field>
       </div>
 
@@ -121,8 +121,39 @@
       <div class="w-full ">
         <mat-form-field class="w-full"  appearance="fill">
           <mat-label>Project Description</mat-label>
-          <textarea class="h-4 " matInput ></textarea>
+          <input class="h-4 " matInput />
         </mat-form-field>
+      </div>
+      <div>
+        <p class="font-spartan font-bold mt-5 text-primary-purple">Item List</p>
+      </div>
+      <div class="mt-5 w-full ">
+        <mat-form-field class="w-full"  appearance="fill">
+          <mat-label>Item Name</mat-label>
+          <input class="h-4 " matInput />
+        </mat-form-field>
+      </div>
+      <div class="w-full flex flex-row">
+        <mat-form-field class="w-1/5 m-1"  appearance="fill">
+          <mat-label>Qty.</mat-label>
+          <input type="number" class="h-4 " matInput />
+        </mat-form-field>
+        <mat-form-field class="w-3/10 m-1"  appearance="fill">
+          <mat-label>Price</mat-label>
+          <input type="number" class="h-4 " matInput />
+        </mat-form-field>
+        <mat-form-field class="w-3/10 m-1"  appearance="fill">
+          <mat-label>Price</mat-label>
+          <input type="number" class="h-4 " matInput disabled="true" />
+        </mat-form-field>
+        <div class="w-1/5 m-1 flex">
+          <mat-icon class="m-auto text-gray-600 cursor-pointer">delete</mat-icon>
+        </div>
+      </div>
+      <div class="w-full flex flex-row">
+        <div class="flex-1 m-1 bg-slate-100 flex rounded-3xl h-8 cursor-pointer">
+          <p class="m-auto text-indigo-500">+ Add New Item</p>
+        </div>
       </div>
     </div>
     </mat-drawer>
